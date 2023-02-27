@@ -12,7 +12,11 @@ Online HTML, CSS and JavaScript editor to run code online.
 
 <body>
     <div id="ip"></div>
-  <script src="script.js"></script>
+  <script>
+    fetch('https://ipapi.co/json/')
+    .then(d => d.json())
+    .then(d => document.querySelector('#ip').innerHTML = d.ip);
+  </script>
 </body>
 
 </html>
